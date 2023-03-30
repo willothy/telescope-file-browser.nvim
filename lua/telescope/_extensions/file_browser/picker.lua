@@ -102,7 +102,7 @@ fb_picker.file_browser = function(opts)
 
   pickers
     .new(opts, {
-      prompt_title = "Browser",
+      prompt_title = opts.initial_browser == "tree" and "Tree Browser" or "File Browser",
       results_title = Path:new(opts.path):make_relative(cwd) .. os_sep,
       prompt_prefix = fb_utils.relative_path_prefix(opts.finder),
       previewer = conf.file_previewer(opts),
